@@ -13,8 +13,6 @@ For each ground-view query, UnifyGeo:
 3. re-ranks those five candidates using detailed feature matching; and
 4. performs metric localization on the top-ranked aerial image.
 
-The evaluator uses one CUDA GPU. Global descriptors are stored in a preallocated GPU tensor and similarities are computed in chunks, so a full query-by-gallery matrix is never materialized.
-
 ## Installation
 
 The released configuration was tested with Python 3.9, PyTorch 1.13.1, CUDA 11.7, and timm 0.9.2.
@@ -120,22 +118,10 @@ Each VIGOR query has one primary positive and three semi-positive aerial referen
 
 - **R@K** measures whether the primary positive is ranked in the first K references.
 - **Hit Rate** masks the three semi-positives and tests whether the primary positive outranks every unrelated gallery reference. The same implementation and strict-greater tie rule are used before and after re-ranking.
-- **Top-1 any-of-four** tests whether the first reference is the primary positive or a semi-positive. It is reported only as a diagnostic and is not the VIGOR Hit Rate.
 - **Metric localization** evaluates the predicted camera location on the known primary-positive aerial tile. It reports mean and median errors and recall below 1, 3, 5, 10, and 20 meters.
 - **LF-CVGL** counts a query as correct only when the primary positive is ranked first and its metric-localization error is below the distance threshold. The denominator is the complete query set.
 
 Re-ranking always processes the initial top five candidates without consulting ground-truth labels. It adds the detailed matching score to the global retrieval score and only permutes those five candidates. Therefore, R@5 and all larger-cutoff retrieval metrics remain unchanged.
-
-## Expected results
-
-The following values were obtained with the released checkpoints and the full VIGOR evaluation sets. Small differences near a distance threshold can occur across CUDA and cuDNN versions.
-
-| Protocol | Re-ranked R@1 | Re-ranked Hit Rate | Metric mean / median | LF-CVGL R@1m |
-|---|---:|---:|---:|---:|
-| Same-area | 82.80 | 89.12 | 2.26 m / 1.13 m | 39.67 |
-| Cross-area | 67.57 | 72.26 | 3.05 m / 1.39 m | 25.58 |
-
-The evaluator also reports retrieval before re-ranking, R@5, R@10, R@1%, localization recall at all configured thresholds, LF-CVGL before re-ranking, and rank-transition diagnostics.
 
 ## Outputs
 
@@ -150,28 +136,9 @@ By default, results are written to `outputs/<protocol>/`:
 
 Cache signatures include the protocol, checkpoint SHA-256, dataset path, sample counts, image sizes, and candidate count. A stale or unsigned cache is rejected.
 
-## Memory troubleshooting
+## Acknowledgements
 
-If evaluation runs out of GPU memory, reduce parameters in this order:
-
-1. `--localization-batch-size`
-2. `--rerank-reference-batch-size`
-3. `--feature-batch-size`
-4. `--rerank-query-batch-size`
-5. `--similarity-query-chunk`
-
-Reducing these values changes throughput but not the evaluation protocol.
-
-## Tests
-
-Run metric tests and the built-in self-test with:
-
-```bash
-python -m unittest discover -s tests -v
-python eval_vigor.py --self-test
-```
-
-After downloading the checkpoints, the test suite additionally validates their hashes, tensor counts, and exact model loading.
+We sincerely thank the authors of [Sample4Geo](https://github.com/Skyy93/Sample4Geo) and [CCVPE](https://github.com/tudelft-iv/CCVPE) for making their code publicly available. Our work builds upon these two excellent projects.
 
 ## Citation
 
