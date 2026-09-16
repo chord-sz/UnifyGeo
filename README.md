@@ -1,6 +1,6 @@
 # UnifyGeo
 
-Official evaluation code for **A Unified Hierarchical Framework for Fine-grained Cross-view Geo-localization over Large-scale Scenarios**.
+Official implementation of **A Unified Hierarchical Framework for Fine-grained Cross-view Geo-localization over Large-scale Scenarios**.
 
 This initial release evaluates the final UnifyGeo models on the VIGOR benchmark. A single command reports image retrieval, metric localization on the primary aerial tile, and large-scale fine-grained cross-view geo-localization (LF-CVGL). Both same-area and cross-area protocols are supported.
 
@@ -15,16 +15,18 @@ For each ground-view query, UnifyGeo:
 
 ## Installation
 
-The released configuration was tested with Python 3.9, PyTorch 1.13.1, CUDA 11.7, and timm 0.9.2.
+The installation below uses Python 3.8, PyTorch 1.13.1 with CUDA 11.6 wheels, and timm 0.9.16.
 
 ```bash
 git clone https://github.com/chord-sz/UnifyGeo.git
 cd UnifyGeo
 conda env create -f environment.yml
-conda activate unifygeo
+conda activate ug
+pip install numpy==1.24.4
+pip install -r requirements.txt
 ```
 
-`requirements.txt` contains the non-PyTorch Python dependencies for users who install a compatible CUDA build of PyTorch separately.
+`requirements.txt` pins the PyTorch CUDA 11.6 wheels and the remaining Python packages used by the original environment.
 
 ## VIGOR dataset
 
