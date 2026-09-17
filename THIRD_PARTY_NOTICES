@@ -22,12 +22,13 @@ GPL-3.0 text is provided in LICENSE.
 SOLAR: Second-Order Loss and Attention for Image Retrieval
 ----------------------------------------------------------
 Repository: https://github.com/tonyngjichun/SOLAR
+Source: https://github.com/tonyngjichun/SOLAR/blob/master/solar_global/networks/networks.py
 License: MIT
 
 The second-order attention block in unifygeo/models/aggregators.py adapts
-SOLAR's attention module, with changes to normalization, dimensions,
-initialization, and residual processing. The upstream MIT notice is retained
-below.
+SOLAR's global SOABlock, with configurable normalization, an output-only
+interface, and optional gradient checkpointing. The upstream MIT notice is
+retained below.
 
 MIT License
 

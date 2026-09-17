@@ -1,7 +1,9 @@
 """Feature aggregation layers used by the retrieval branches.
 
-The second-order attention block adapts SOLAR (MIT):
-https://github.com/tonyngjichun/SOLAR
+SOABlock adapts SOLAR's solar_global/networks/networks.py::SOABlock (MIT):
+https://github.com/tonyngjichun/SOLAR/blob/master/solar_global/networks/networks.py
+This version supports configurable normalization, omits visualization outputs,
+and adds optional gradient checkpointing for UnifyGeo's ConvNeXt features.
 See THIRD_PARTY_NOTICES for the upstream copyright and license notice.
 """
 
@@ -32,7 +34,7 @@ class GeM(nn.Module):
 
 
 class SOABlock(nn.Module):
-    """Second-order attention block adapted from SOLAR."""
+    """Second-order attention block adapted from SOLAR's global SOABlock."""
 
     def __init__(self, in_channels, reduction=2, norm="LN"):
         super().__init__()
