@@ -1,4 +1,9 @@
-"""Feature aggregation layers used by the retrieval branches."""
+"""Feature aggregation layers used by the retrieval branches.
+
+The second-order attention block adapts SOLAR (MIT):
+https://github.com/tonyngjichun/SOLAR
+See THIRD_PARTY_NOTICES for the upstream copyright and license notice.
+"""
 
 from functools import partial
 

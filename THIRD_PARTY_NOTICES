@@ -1,14 +1,33 @@
 UnifyGeo Third-Party Notices
 ============================
 
-This distribution includes or adapts ideas and implementation patterns from
-the following projects. Their licenses remain applicable to the corresponding
-portions.
+This distribution includes adaptations and implementation patterns from the
+following projects. Copyright and license notices for upstream code remain
+applicable to the corresponding portions. Project-level GPL-3.0 licensing
+does not erase these upstream notices or grant rights that an upstream project
+has not granted.
+
+CCVPE: Convolutional Cross-View Pose Estimation
+-----------------------------------------------
+Repository: https://github.com/tudelft-iv/CCVPE
+Source: https://github.com/tudelft-iv/CCVPE/blob/main/models.py
+License: GNU General Public License v3.0 (GPL-3.0)
+
+The hierarchical matching and localization decoder in
+unifygeo/models/localization_decoder.py adapts CCVPE's decoder. It changes the
+feature widths, matching hierarchy, normalization, and reranking interfaces.
+The upstream GPL-3.0 license and author copyright remain applicable. The full
+GPL-3.0 text is provided in LICENSE.
 
 SOLAR: Second-Order Loss and Attention for Image Retrieval
 ----------------------------------------------------------
 Repository: https://github.com/tonyngjichun/SOLAR
 License: MIT
+
+The second-order attention block in unifygeo/models/aggregators.py adapts
+SOLAR's attention module, with changes to normalization, dimensions,
+initialization, and residual processing. The upstream MIT notice is retained
+below.
 
 MIT License
 
@@ -31,6 +50,18 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Sample4Geo: Hard Negative Sampling for Cross-View Geo-Localisation
+------------------------------------------------------------------
+Repository: https://github.com/Skyy93/Sample4Geo
+License: No code license file or license statement found in the official
+repository as of 17 September 2026.
+
+The VIGOR data-loader structure and retrieval-evaluation workflow in this
+project build on Sample4Geo. Attribution alone is not a redistribution
+license. Permission for any derivative source code must be clarified with
+the upstream rights holders before this repository is made public. The
+project-level GPL-3.0 license does not purport to relicense Sample4Geo code.
 
 DETR
 ----

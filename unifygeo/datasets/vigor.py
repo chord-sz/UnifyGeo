@@ -1,4 +1,10 @@
-"""VIGOR evaluation dataset for same-area and cross-area protocols."""
+"""VIGOR evaluation dataset for same-area and cross-area protocols.
+
+The data-loader structure builds on Sample4Geo's VIGOR reader:
+https://github.com/Skyy93/Sample4Geo/blob/main/sample4geo/dataset/vigor.py
+The upstream repository does not publish a code license; see
+THIRD_PARTY_NOTICES before redistributing this module.
+"""
 
 from pathlib import Path
 

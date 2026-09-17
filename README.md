@@ -140,7 +140,7 @@ Cache signatures include the protocol, checkpoint SHA-256, dataset path, sample 
 
 ## Acknowledgements
 
-We sincerely thank the authors of [Sample4Geo](https://github.com/Skyy93/Sample4Geo) and [CCVPE](https://github.com/tudelft-iv/CCVPE) for making their code publicly available. Our work builds upon these two excellent projects.
+We thank the authors of [Sample4Geo](https://github.com/Skyy93/Sample4Geo), [CCVPE](https://github.com/tudelft-iv/CCVPE), and [SOLAR](https://github.com/tonyngjichun/SOLAR). The VIGOR data and retrieval-evaluation workflow builds on Sample4Geo; the localization decoder adapts CCVPE; and the second-order attention block adapts SOLAR. See `THIRD_PARTY_NOTICES` for provenance and license details.
 
 ## Citation
 
@@ -160,4 +160,4 @@ Please cite the [arXiv paper](https://arxiv.org/abs/2505.07622):
 
 ## License
 
-UnifyGeo is released under the Apache License 2.0. See `LICENSE` and `THIRD_PARTY_NOTICES` for details. The VIGOR dataset and released model checkpoints may be subject to their own terms.
+UnifyGeo's original code and the GPL-compatible adaptations are distributed under the GNU General Public License v3.0. Existing third-party notices and license terms are preserved in `THIRD_PARTY_NOTICES`. Sample4Geo does not currently publish a code license in its official repository; the permission needed for redistribution of any code derived from it is under review. The VIGOR dataset and released model checkpoints may be subject to their own terms.

@@ -1,4 +1,10 @@
-"""Hierarchical detailed-feature matching and localization decoder."""
+"""Hierarchical detailed-feature matching and localization decoder.
+
+Adapted from CCVPE's models.py (GPL-3.0):
+https://github.com/tudelft-iv/CCVPE/blob/main/models.py
+Modified for UnifyGeo's feature hierarchy, dimensions, and reranking.
+See THIRD_PARTY_NOTICES for provenance and license details.
+"""
 
 import collections
 
