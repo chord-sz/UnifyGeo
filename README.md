@@ -140,7 +140,12 @@ Cache signatures include the protocol, checkpoint SHA-256, dataset path, sample 
 
 ## Acknowledgements
 
-We thank the authors of [Sample4Geo](https://github.com/Skyy93/Sample4Geo) and [CCVPE](https://github.com/tudelft-iv/CCVPE), whose work UnifyGeo builds upon. See `THIRD_PARTY_NOTICES` for details.
+This work builds upon and draws inspiration from the following projects. We thank their authors for making their work available:
+
+- [Sample4Geo](https://github.com/Skyy93/Sample4Geo)
+- [CCVPE](https://github.com/tudelft-iv/CCVPE)
+
+See `THIRD_PARTY_NOTICES` for code provenance and license details.
 
 ## Citation
 
