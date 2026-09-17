@@ -144,12 +144,17 @@ We sincerely thank the authors of [Sample4Geo](https://github.com/Skyy93/Sample4
 
 ## Citation
 
+Please cite the [arXiv paper](https://arxiv.org/abs/2505.07622):
+
 ```bibtex
-@article{song2026unifygeo,
+@misc{song2025unifygeo,
   title={A Unified Hierarchical Framework for Fine-grained Cross-view Geo-localization over Large-scale Scenarios},
-  author={Song, Zhuo and Zhang, Ye and Li, Kunhong and Wang, Longguang and Guo, Yulan},
-  journal={IEEE Transactions on Image Processing},
-  year={2026}
+  author={Zhuo Song and Ye Zhang and Kunhong Li and Longguang Wang and Yulan Guo},
+  year={2025},
+  eprint={2505.07622},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2505.07622}
 }
 ```
 
