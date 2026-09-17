@@ -140,16 +140,14 @@ Cache signatures include the protocol, checkpoint SHA-256, dataset path, sample 
 
 ## Acknowledgements
 
-This work builds upon and draws inspiration from the following projects. We thank their authors for making their work available:
+This work draws inspiration from the following code as references. We extend our gratitude to these remarkable contributions:
 
 - [Sample4Geo](https://github.com/Skyy93/Sample4Geo)
 - [CCVPE](https://github.com/tudelft-iv/CCVPE)
 
-See `THIRD_PARTY_NOTICES` for code provenance and license details.
-
 ## Citation
 
-Please cite the [arXiv paper](https://arxiv.org/abs/2505.07622):
+If you use this repository in your research, please cite our [paper](https://arxiv.org/abs/2505.07622):
 
 ```bibtex
 @misc{song2025unifygeo,
@@ -165,4 +163,4 @@ Please cite the [arXiv paper](https://arxiv.org/abs/2505.07622):
 
 ## License
 
-Original UnifyGeo code and GPL-compatible adaptations are licensed under GPLv3. See `LICENSE` and `THIRD_PARTY_NOTICES` for third-party terms and pending permissions.
+Original UnifyGeo code and GPL-compatible adaptations are licensed under [GPLv3](LICENSE); see [third-party notices](THIRD_PARTY_NOTICES) for other terms and pending permissions.
